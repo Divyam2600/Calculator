@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Calculator</title>
+</head>
+<body class='max-w-md mx-auto space-y-3 flex flex-col justify-center items-center'>
+    <p class='text-4xl font-semibold font-sans text-center'>Calculator</p>
+    <div class='w-3/4 border-8 border-orange-500 rounded-[40px] my-auto overflow-hidden h-full bg-black'>
+        <input type="text" id="text_area" value="0" class=' h-28 w-full text-white text-4xl bg-black text-right px-7 border-b' disabled />
+        <div class='space-y-3 mt-5 flex flex-col '>
+            <div class='mx-3 grid grid-cols-4 items-center'>
+                <button class='rounded-full border-none h-16 w-16 text-center font-semibold col-span-1 text-2xl bg-[#d4d4d2] text-black' id="clear" onclick = "clearAll()">AC</button>
+                <button class='rounded-full border-none h-16 w-16 text-center font-semibold col-span-1 text-2xl bg-[#d4d4d2] text-black' onclick = "del()">DEL</button>
+                <button class='rounded-full border-none h-16 w-16 text-2xl text-center font-semibold col-span-1 bg-[#d4d4d2] text-black' onclick = "display('%')">%</button>
+                <button class='rounded-full border-none text-white h-16 w-16 text-center font-semibold col-span-1 text-4xl pb-2 bg-[#ff9500]' onclick = "display('/')">÷</button>
+            </div>
+            <div class='mx-3 grid grid-cols-4 items-center'>
+                <button class='rounded-full border-none text-white h-16 w-16  text-2xl text-center font-semibold bg-[#505050] col-span-1 hover:opacity-70 transition-all ease-out' onclick = "display('7')">7</button>
+                <button class='rounded-full border-none text-white h-16 w-16  text-2xl text-center font-semibold bg-[#505050] col-span-1 hover:opacity-70 transition-all ease-out' onclick = "display('8')">8</button>
+                <button class='rounded-full border-none text-white h-16 w-16  text-2xl text-center font-semibold bg-[#505050] col-span-1 hover:opacity-70 transition-all ease-out' onclick = "display('9')">9</button>
+                <button class='rounded-full border-none text-white h-16 w-16 text-center font-semibold col-span-1 bg-[#ff9500] text-4xl pb-2 ' onclick = "display('*')">x</button>
+            </div>
+            <div class='mx-3 grid grid-cols-4 items-center'>
+                <button class='rounded-full border-none text-white h-16 w-16  text-2xl text-center font-semibold bg-[#505050] col-span-1 hover:opacity-70 transition-all ease-out' onclick = "display('4')">4</button>
+                <button class='rounded-full border-none text-white h-16 w-16  text-2xl text-center font-semibold bg-[#505050] col-span-1 hover:opacity-70 transition-all ease-out' onclick = "display('5')">5</button>
+                <button class='rounded-full border-none text-white h-16 w-16  text-2xl text-center font-semibold bg-[#505050] col-span-1 hover:opacity-70 transition-all ease-out' onclick = "display('6')">6</button>
+                <button class='rounded-full border-none text-white h-16 w-16  text-2xl text-center font-semibold col-span-1 rotate-90 bg-[#ff9500]' onclick = "display('-')">l</button>
+            </div>
+            <div class='mx-3 grid grid-cols-4 items-center'>
+                <button class='rounded-full border-none text-white h-16 w-16  text-2xl text-center font-semibold bg-[#505050] col-span-1 hover:opacity-70 transition-all ease-out' onclick = "display('1')">1</button>
+                <button class='rounded-full border-none text-white h-16 w-16  text-2xl text-center font-semibold bg-[#505050] col-span-1 hover:opacity-70 transition-all ease-out' onclick = "display('2')">2</button>
+                <button class='rounded-full border-none text-white h-16 w-16  text-2xl text-center font-semibold bg-[#505050] col-span-1 hover:opacity-70 transition-all ease-out' onclick = "display('3')">3</button>
+                <button class='rounded-full border-none text-white h-16 w-16 text-center font-semibold col-span-1 text-4xl pb-2 bg-[#ff9500]' onclick = "display('+')" >+</button>
+            </div>
+            <div class='mx-3 grid grid-cols-4 items-center pb-4'>
+                <button class='rounded-full border-none text-white h-16 w-16 text-2xl text-center font-semibold bg-[#505050] col-span-2 w-11/12 hover:opacity-70 transition-all ease-out' value='0' onclick = "display('0')">0</button>
+                <button class='rounded-full border-none text-white h-16 w-16 text-center font-semibold bg-[#505050] col-span-1 text-2xl pb-2 hover:opacity-70 transition-all ease-out' onclick = "display('.')">.</button>
+                <button class='rounded-full border-none text-white h-16 w-16 text-center font-semibold col-span-1 text-4xl pb-2 bg-[#ff9500]' onclick = "calculate()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js" type="text/javascript"></script>
+  </body>
+</html>
